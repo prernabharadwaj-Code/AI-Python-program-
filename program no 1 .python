@@ -1,0 +1,54 @@
+x=int(input("enter the value of inital jug x: "))
+y=int(input("enter the value of inital jug y: "))
+xf=int(input("enter the value of final jug x: "))
+yf=int(input("enter the value of final jug y: "))
+
+print("list of many option\n");
+print("r1 :fill 4 litre gallon in x")
+print("r2 :fill 3  litre gallon in y")
+print("r3 :empty  litre gallon in x")
+print("r4 :empty  litre gallon in y")
+print("r5 :take some water from y to x")
+print("r6 :take some water from x to y")
+print("r7 :complete from y to x")
+print("r8 :complete from x to y")
+
+while True:
+    rule=int(input("enter rule no\n"))
+    if(rule==1):
+        if x<4:
+            x=4
+    if(rule==2):
+        if y<3:
+            y=3
+    if(rule==3):
+        if x>0:
+            x=0
+    if(rule==4):
+        if y>0:
+            y=0
+    if (rule==5):
+        if (x+y)>=4 and y>0 :
+             x=4
+             y=y-(x-3)                              
+                                     
+    if (rule==6):
+        if (x+y)>=3 and x>0 :
+             x=x-(3-y)     
+             y=3
+    if (rule==7):
+        if (x+y)<=4 and y>0 :
+             x=x+y     
+             y=0                      
+    if (rule==8):
+        if (x+y)<=3 and x>0 :
+             x=0 
+             y=x+y  
+    if x+y<=yf and x>0:
+        x=0
+        y=x+y
+    print("X=",x)    
+    print("Y=",y)    
+    if x==2:
+        print("result is goal state")
+        break
